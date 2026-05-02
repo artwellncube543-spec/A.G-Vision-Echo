@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A.G Echo Vision — Navigate. Connect. Thrive.</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Skip navigation link for screen readers -->
+  <a href="#main" class="skip-nav">Skip to main content</a>
+
+  <!-- ========== ACCESSIBILITY BAR ========== -->
+  <div class="a11y-bar" role="toolbar" aria-label="Accessibility controls">
+    <span>♿ Accessibility Tools</span>
+    <button class="a11y-btn" onclick="toggleLargeText()" aria-label="Toggle large text">🔤 Large Text</button>
+    <button class="a11y-btn" onclick="toggleContrast()" aria-label="Toggle high contrast">◐ High Contrast</button>
+    <button class="a11y-btn" onclick="toggleDyslexia()" aria-label="Toggle dyslexia-friendly font">Aa Dyslexia Font</button>
+    <button class="a11y-btn" onclick="startVoiceGuide()" aria-label="Start voice guidance">🔊 Voice Guide</button>
+  </div>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav role="navigation" aria-label="Main navigation">
+    <a href="#" class="logo" aria-label="A.G Echo Vision Home">
+      <div class="logo-icon" aria-hidden="true">👁</div>
+      A.G Echo Vision
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="#navigate">Navigate</a></li>
+      <li><a href="#connect">Connect</a></li>
+      <li><a href="#stories">Stories</a></li>
+      <li><a href="#marketplace">Tools</a></li>
+      <li><a href="#sponsors">Sponsor</a></li>
+      <li><a href="#join" class="nav-cta">Join Free</a></li>
+    </ul>
+  </nav>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main id="main">
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <div class="hero-badge" aria-label="Global platform">🌍 Connecting Africa, Asia &amp; Beyond</div>
+
+        <h1 class="hero-title" id="hero-heading">
+          Navigate the World.
+          <em>Live Without Limits.</em>
+        </h1>
+
+        <p class="hero-sub">
+          A.G Echo Vision is the all-in-one platform for visually impaired individuals — guiding you
+          through shops, connecting you to experts, and building a global community that thrives together.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#navigate" class="btn-primary" aria-label="Start navigating now">
+            🧭 Start Navigating
+          </a>
+          <button class="btn-secondary" onclick="openModal()" aria-label="Join our community">
+            👥 Join Community
+          </button>
+        </div>
+
+        <div class="hero-stats" role="list" aria-label="Platform statistics">
+          <div class="stat" role="listitem">
+            <div class="stat-num" aria-label="42 thousand members">42K+</div>
+            <div class="stat-label">Active Members</div>
+          </div>
+          <div class="stat" role="listitem">
+            <div class="stat-num" aria-label="30 countries">30</div>
+            <div class="stat-label">Countries</div>
+          </div>
+          <div class="stat" role="listitem">
+            <div class="stat-num" aria-label="1.2 thousand experts">1.2K</div>
+            <div class="stat-label">Experts &amp; Guides</div>
+          </div>
+          <div class="stat" role="listitem">
+            <div class="stat-num" aria-label="98 percent satisfaction">98%</div>
+            <div class="stat-label">Satisfaction</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating status cards (decorative) -->
+      <div class="hero-visual" aria-hidden="true">
+        <div class="float-card">
+          <div class="float-card-title">Live Navigation</div>
+          <div class="float-card-main">
+            <div class="dot"></div>
+            John is near Pharmacy on 3rd Ave
+          </div>
+        </div>
+        <div class="float-card">
+          <div class="float-card-title">Expert Connected</div>
+          <div class="float-card-main">
+            <div class="dot blue"></div>
+            Amara (Lagos) matched with you
+          </div>
+        </div>
+        <div class="float-card">
+          <div class="float-card-title">New Story Shared</div>
+          <div class="float-card-main">
+            <div class="dot gold"></div>
+            "I landed my first tech job!"
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== NAVIGATION FEATURE SECTION ===== -->
+    <section class="nav-feature" id="navigate" aria-labelledby="navigate-heading">
+      <div class="section-label" aria-hidden="true">Core Feature</div>
+      <h2 class="section-title" id="navigate-heading">Navigate Shops &amp;<br>Streets Confidently</h2>
+      <p class="section-sub">
+        Real-time voice-guided navigation for streets, shops, markets, and public spaces —
+        designed specifically for how visually impaired people experience space.
+      </p>
+
+      <div class="nav-demo">
+
+        <!-- Map Mock UI -->
+        <div class="nav-map-mock" role="img" aria-label="Navigation interface showing a grid map with user location marked, voice guidance active">
+          <div style="font-size:0.72rem;color:var(--muted);font-family:'Space Mono',monospace;letter-spacing:1px;margin-bottom:12px;">
+            LIVE MAP — NAIROBI CENTRAL MARKET
+          </div>
+          <div class="map-grid" aria-hidden="true">
+            <div class="map-block shop"></div>
+            <div class="map-block"></div>
+            <div class="map-block path"></div>
+            <div class="map-block path"></div>
+            <div class="map-block shop"></div>
+            <div class="map-block"></div>
+            <div class="map-block shop"></div>
+            <div class="map-block path"></div>
+            <div class="map-block"></div>
+            <div class="map-block"></div>
+            <div class="map-block path"></div>
+            <div class="map-block path"></div>
+            <div class="map-block user"></div>
+            <div class="map-block path"></div>
+            <div class="map-block shop"></div>
+            <div class="map-block"></div>
+            <div class="map-block"></div>
+            <div class="map-block path"></div>
+            <div class="map-block shop"></div>
+            <div class="map-block"></div>
+            <div class="map-block"></div>
+            <div class="map-block"></div>
+            <div class="map-block path"></div>
+            <div class="map-block path"></div>
+            <div class="map-block shop"></div>
+          </div>
+          <div class="voice-bubble" role="status" aria-live="polite" aria-label="Voice guidance: Turn left in 10 metres, pharmacy on your right">
+            <div class="voice-wave" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <span><strong>Voice Guide:</strong> Turn left in 10m — Pharmacy on your right</span>
+          </div>
+        </div>
+
+        <!-- Feature List -->
+        <ul class="feature-list" role="list" aria-label="Navigation features">
+          <li class="feature-item reveal">
+            <div class="feature-icon" aria-hidden="true">🗣️</div>
+            <div class="feature-text">
+              <h3>Voice-First Navigation</h3>
+              <p>Step-by-step audio directions describe turns, obstacles, shop entrances, and landmarks in natural language — no screen required.</p>
+            </div>
+          </li>
+          <li class="feature-item reveal">
+            <div class="feature-icon" aria-hidden="true">🛒</div>
+            <div class="feature-text">
+              <h3>In-Shop Guidance</h3>
+              <p>Navigate store aisles, locate products by description, and get help at checkouts. Works offline in mapped areas.</p>
+            </div>
+          </li>
+          <li class="feature-item reveal">
+            <div class="feature-icon" aria-hidden="true">🤝</div>
+            <div class="feature-text">
+              <h3>Live Expert Assist</h3>
+              <p>Connect instantly with a nearby trained guide or remote expert who can describe your surroundings via audio.</p>
+            </div>
+          </li>
+          <li class="feature-item reveal">
+            <div class="feature-icon" aria-hidden="true">📍</div>
+            <div class="feature-text">
+              <h3>Community-Mapped Routes</h3>
+              <p>Routes verified and described by blind users themselves — the most accurate, real-world navigation available.</p>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+    </section>
+
+    <!-- ===== CONNECT / COMMUNITY SECTION ===== -->
+    <section id="connect" aria-labelledby="connect-heading">
+      <div class="section-label" aria-hidden="true">Community</div>
+      <h2 class="section-title" id="connect-heading">Connect With Experts<br>&amp; Community</h2>
+      <p class="section-sub">
+        Like a community built for belonging — match with experts who've lived the experience,
+        mentors across the continent, and friends who truly understand.
+      </p>
+
+      <!-- Tabs -->
+      <div class="tabs" role="tablist" aria-label="Community filter">
+        <button class="tab-btn active" role="tab" aria-selected="true"  onclick="switchTab(this, 'experts')">🎓 Experts</button>
+        <button class="tab-btn"        role="tab" aria-selected="false" onclick="switchTab(this, 'mentors')">💛 Mentors</button>
+        <button class="tab-btn"        role="tab" aria-selected="false" onclick="switchTab(this, 'members')">🌍 Members</button>
+      </div>
+
+      <!-- Experts Tab -->
+      <div id="experts" class="tab-content active" aria-label="Expert profiles">
+        <div class="profiles-grid">
+
+          <article class="profile-card reveal" tabindex="0" aria-label="Expert profile: Dr. Amara Osei">
+            <div class="profile-avatar" aria-hidden="true">👩‍⚕️</div>
+            <div class="profile-name">Dr. Amara Osei</div>
+            <div class="profile-role">Mobility Specialist</div>
+            <p class="profile-bio">17 years guiding VI communities across West Africa. Specializes in urban navigation training and assistive tech.</p>
+            <div class="profile-tags">
+              <span class="tag">Navigation</span>
+              <span class="tag blue">Ghana</span>
+              <span class="tag green">Available</span>
+            </div>
+            <button class="connect-btn" onclick="showToast('Connection request sent to Dr. Amara!')">Connect →</button>
+          </article>
+
+          <article class="profile-card reveal" tabindex="0" aria-label="Expert profile: Kwame Banda">
+            <div class="profile-avatar" aria-hidden="true">👨‍💻</div>
+            <div class="profile-name">Kwame Banda</div>
+            <div class="profile-role">Assistive Tech Expert</div>
+            <p class="profile-bio">Screen reader trainer and app developer who is blind himself. Helps members master digital tools for work and life.</p>
+            <div class="profile-tags">
+              <span class="tag">Tech</span>
+              <span class="tag blue">Zambia</span>
+              <span class="tag green">Available</span>
+            </div>
+            <button class="connect-btn" onclick="showToast('Connection request sent to Kwame!')">Connect →</button>
+          </article>
+
+          <article class="profile-card reveal" tabindex="0" aria-label="Expert profile: Fatima Al-Rashid">
+            <div class="profile-avatar" aria-hidden="true">👩‍🏫</div>
+            <div class="profile-name">Fatima Al-Rashid</div>
+            <div class="profile-role">Employment Coach</div>
+            <p class="profile-bio">Helped 200+ visually impaired individuals secure employment. Works across North Africa and the Middle East.</p>
+            <div class="profile-tags">
+              <span class="tag">Career</span>
+              <span class="tag blue">Egypt</span>
+              <span class="tag">Remote</span>
+            </div>
+            <button class="connect-btn" onclick="showToast('Connection request sent to Fatima!')">Connect →</button>
+          </article>
+
+          <article class="profile-card reveal" tabindex="0" aria-label="Expert profile: Samuel Nkosi">
+            <div class="profile-avatar" aria-hidden="true">🧑‍🎤</div>
+            <div class="profile-name">Samuel Nkosi</div>
+            <div class="profile-role">Life Skills Trainer</div>
+            <p class="profile-bio">Born blind. Founded a VI cooking school in Johannesburg that now has 3 locations. Passionate about independence.</p>
+            <div class="profile-tags">
+              <span class="tag">Daily Living</span>
+              <span class="tag blue">South Africa</span>
+              <span class="tag green">Available</span>
+            </div>
+            <button class="connect-btn" onclick="showToast('Connection request sent to Samuel!')">Connect →</button>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- Mentors Tab -->
+      <div id="mentors" class="tab-content" aria-label="Mentor profiles">
+        <div class="profiles-grid">
+
+          <article class="profile-card reveal" tabindex="0">
+            <div class="profile-avatar" aria-hidden="true">👴</div>
+            <div class="profile-name">James Mwangi</div>
+            <div class="profile-role">Mentor · 30 yrs experience</div>
+            <p class="profile-bio">Lost sight at 22. Built a successful accounting business. Mentors young VI professionals across East Africa.</p>
+            <div class="profile-tags">
+              <span class="tag">Finance</span>
+              <span class="tag blue">Kenya</span>
+            </div>
+            <button class="connect-btn" onclick="showToast('Mentor request sent to James!')">Request Mentor →</button>
+          </article>
+
+          <article class="profile-card reveal" tabindex="0">
+            <div class="profile-avatar" aria-hidden="true">👩</div>
+            <div class="profile-name">Grace Adeyemi</div>
+            <div class="profile-role">Mentor · Entrepreneur</div>
+            <p class="profile-bio">Runs an online bakery. Shares practical advice on using tech for business with zero vision loss as a barrier.</p>
+            <div class="profile-tags">
+              <span class="tag">Business</span>
+              <span class="tag blue">Nigeria</span>
+            </div>
+            <button class="connect-btn" onclick="showToast('Mentor request sent to Grace!')">Request Mentor →</button>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- Members Tab -->
+      <div id="members" class="tab-content" aria-label="Member profiles">
+        <div class="profiles-grid">
+
+          <article class="profile-card reveal" tabindex="0">
+            <div class="profile-avatar" aria-hidden="true">🧑</div>
+            <div class="profile-name">Tendai Moyo</div>
+            <div class="profile-role">Member · Student</div>
+            <p class="profile-bio">Computer science student navigating university life. Looking for study partners and tech tips.</p>
+            <div class="profile-tags">
+              <span class="tag blue">Zimbabwe</span>
+              <span class="tag green">Active</span>
+            </div>
+            <button class="connect-btn" onclick="showToast('Friend request sent to Tendai!')">Connect →</button>
+          </article>
+
+          <article class="profile-card reveal" tabindex="0">
+            <div class="profile-avatar" aria-hidden="true">👩</div>
+            <div class="profile-name">Aisha Diallo</div>
+            <div class="profile-role">Member · New to VI</div>
+            <p class="profile-bio">Recently diagnosed. Seeking support, navigation tips, and community from those who've been on this journey.</p>
+            <div class="profile-tags">
+              <span class="tag blue">Senegal</span>
+              <span class="tag">Seeking Support</span>
+            </div>
+            <button class="connect-btn" onclick="showToast('Friend request sent to Aisha!')">Connect →</button>
+          </article>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ===== STORIES SECTION ===== -->
+    <section class="stories-section" id="stories" aria-labelledby="stories-heading">
+      <div class="section-label" aria-hidden="true">Inspiration</div>
+      <h2 class="section-title" id="stories-heading">Stories of Strength</h2>
+      <p class="section-sub">
+        Real people sharing how they've navigated life, built careers, raised families, and found joy
+        — to motivate and uplift every member of our community.
+      </p>
+
+      <div class="stories-grid">
+
+        <article class="story-card reveal" tabindex="0" aria-label="Story by Chidi Okafor, Employment">
+          <div class="story-category">💼 Employment</div>
+          <blockquote class="story-quote">
+            I went from feeling unemployable to leading a team of 12 developers at a tech startup.
+            A.G Echo Vision connected me to the mentor and tools that made it possible.
+          </blockquote>
+          <div class="story-author">
+            <div class="story-avatar" aria-hidden="true">👨</div>
+            <div>
+              <div class="story-name">Chidi Okafor</div>
+              <div class="story-location">Lagos, Nigeria · Software Engineer</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="story-card reveal" tabindex="0" aria-label="Story by Zanele Dlamini, Daily Life">
+          <div class="story-category">🏠 Daily Life</div>
+          <blockquote class="story-quote">
+            The navigation feature changed everything. I do my own grocery shopping every week now.
+            My family could not believe it the first time I came home alone.
+          </blockquote>
+          <div class="story-author">
+            <div class="story-avatar" aria-hidden="true">👩</div>
+            <div>
+              <div class="story-name">Zanele Dlamini</div>
+              <div class="story-location">Durban, South Africa · Mother of 3</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="story-card reveal" tabindex="0" aria-label="Story by Emmanuel Asante, Education">
+          <div class="story-category">🎓 Education</div>
+          <blockquote class="story-quote">
+            I was told university was not realistic for me. I graduated top of my class in law last year.
+            The screen reader coaching from Kwame was the turning point.
+          </blockquote>
+          <div class="story-author">
+            <div class="story-avatar" aria-hidden="true">🧑</div>
+            <div>
+              <div class="story-name">Emmanuel Asante</div>
+              <div class="story-location">Accra, Ghana · Law Graduate</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="story-card reveal" tabindex="0" aria-label="Story by Priya Sharma, Entrepreneurship">
+          <div class="story-category">🚀 Entrepreneurship</div>
+          <blockquote class="story-quote">
+            My online crafts business now ships to 14 countries. I run everything myself.
+            The digital tools section introduced me to apps I never knew existed.
+          </blockquote>
+          <div class="story-author">
+            <div class="story-avatar" aria-hidden="true">👩</div>
+            <div>
+              <div class="story-name">Priya Sharma</div>
+              <div class="story-location">Mumbai, India · Shop Owner</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="story-card reveal" tabindex="0" aria-label="Story by Kofi Mensah, Community">
+          <div class="story-category">🤝 Community</div>
+          <blockquote class="story-quote">
+            I used to feel so isolated. Now I have friends from six different countries who truly understand.
+            This community saved me in the darkest period of my life.
+          </blockquote>
+          <div class="story-author">
+            <div class="story-avatar" aria-hidden="true">👨</div>
+            <div>
+              <div class="story-name">Kofi Mensah</div>
+              <div class="story-location">Kumasi, Ghana · Youth Advocate</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="story-card reveal" tabindex="0" aria-label="Story by Mele Tupou, Family">
+          <div class="story-category">💛 Family</div>
+          <blockquote class="story-quote">
+            I helped my blind daughter set up her first apartment at 24. She is completely independent.
+            I cried watching her cook dinner by herself for the first time. Pure joy.
+          </blockquote>
+          <div class="story-author">
+            <div class="story-avatar" aria-hidden="true">👩</div>
+            <div>
+              <div class="story-name">Mele Tupou</div>
+              <div class="story-location">Fiji · Parent of VI adult</div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== MARKETPLACE SECTION ===== -->
+    <section id="marketplace" aria-labelledby="market-heading">
+      <div class="section-label" aria-hidden="true">Tools &amp; Equipment</div>
+      <h2 class="section-title" id="market-heading">Assistive Equipment<br>&amp; Digital Tools</h2>
+      <p class="section-sub">
+        Carefully curated hardware and software — reviewed and recommended by the VI community itself.
+        Find what works for real life.
+      </p>
+
+      <div class="market-grid">
+
+        <article class="product-card reveal" tabindex="0" aria-label="Product: OrCam MyEye Pro">
+          <div class="product-img" aria-hidden="true">📷</div>
+          <div class="product-body">
+            <div class="product-badge">Hardware · Camera</div>
+            <h3 class="product-name">OrCam MyEye Pro</h3>
+            <p class="product-desc">Clips to glasses and reads text, recognizes faces, and identifies products aloud in real time.</p>
+            <div class="product-footer">
+              <span class="product-price">$3,500</span>
+              <button class="add-btn" onclick="showToast('Added to your wishlist!')">Learn More</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" tabindex="0" aria-label="Product: NVDA Screen Reader">
+          <div class="product-img" aria-hidden="true">💻</div>
+          <div class="product-body">
+            <div class="product-badge">Software · Screen Reader</div>
+            <h3 class="product-name">NVDA Screen Reader</h3>
+            <p class="product-desc">Free, powerful screen reader for Windows. Used by millions globally. Full web &amp; app support.</p>
+            <div class="product-footer">
+              <span class="product-price free">FREE</span>
+              <button class="add-btn" onclick="showToast('NVDA added to your toolkit!')">Add to Kit</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" tabindex="0" aria-label="Product: Refreshabraille 18">
+          <div class="product-img" aria-hidden="true">⌨️</div>
+          <div class="product-body">
+            <div class="product-badge">Hardware · Braille</div>
+            <h3 class="product-name">Refreshabraille 18</h3>
+            <p class="product-desc">Portable 18-cell braille display. Works with smartphones, tablets, and computers via Bluetooth.</p>
+            <div class="product-footer">
+              <span class="product-price">$595</span>
+              <button class="add-btn" onclick="showToast('Added to your wishlist!')">Learn More</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" tabindex="0" aria-label="Product: Be My Eyes App">
+          <div class="product-img" aria-hidden="true">📱</div>
+          <div class="product-body">
+            <div class="product-badge">App · Remote Sighted Help</div>
+            <h3 class="product-name">Be My Eyes</h3>
+            <p class="product-desc">Connect instantly with a sighted volunteer or company specialist via live video call for visual tasks.</p>
+            <div class="product-footer">
+              <span class="product-price free">FREE</span>
+              <button class="add-btn" onclick="showToast('Be My Eyes added to your toolkit!')">Add to Kit</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" tabindex="0" aria-label="Product: WeWalk Smart Cane">
+          <div class="product-img" aria-hidden="true">🦯</div>
+          <div class="product-body">
+            <div class="product-badge">Hardware · Mobility</div>
+            <h3 class="product-name">WeWalk Smart Cane</h3>
+            <p class="product-desc">Smart cane with built-in ultrasonic sensors, Google Maps, and voice assistant integration.</p>
+            <div class="product-footer">
+              <span class="product-price">$500</span>
+              <button class="add-btn" onclick="showToast('Added to your wishlist!')">Learn More</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" tabindex="0" aria-label="Product: Seeing AI by Microsoft">
+          <div class="product-img" aria-hidden="true">🤖</div>
+          <div class="product-body">
+            <div class="product-badge">App · AI Vision</div>
+            <h3 class="product-name">Seeing AI (Microsoft)</h3>
+            <p class="product-desc">Narrates the world around you — reads documents, describes scenes, scans barcodes, identifies people.</p>
+            <div class="product-footer">
+              <span class="product-price free">FREE</span>
+              <button class="add-btn" onclick="showToast('Seeing AI added to your toolkit!')">Add to Kit</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== SPONSORS SECTION ===== -->
+    <section class="sponsor-section" id="sponsors" aria-labelledby="sponsor-heading">
+      <div class="section-label" aria-hidden="true">Partnerships</div>
+      <h2 class="section-title" id="sponsor-heading">Partner With Us.<br>Change Lives.</h2>
+      <p class="section-sub">
+        Your sponsorship funds navigation mapping, expert connections, equipment subsidies, and
+        community programs for people who need it most.
+      </p>
+
+      <div class="sponsor-tiers" role="list" aria-label="Sponsorship tiers">
+
+        <!-- Community Tier -->
+        <article class="tier-card reveal" role="listitem" tabindex="0" aria-label="Community sponsor tier, 500 dollars per month">
+          <div class="tier-name">Community</div>
+          <div class="tier-amount">$500 <span>/month</span></div>
+          <p class="tier-desc">Perfect for small businesses wanting to make a real community difference.</p>
+          <ul class="tier-perks" aria-label="Tier benefits">
+            <li class="tier-perk">Logo on Community Board</li>
+            <li class="tier-perk">Monthly impact report</li>
+            <li class="tier-perk">Sponsor 5 members' equipment</li>
+            <li class="tier-perk">Social media recognition</li>
+          </ul>
+          <button class="sponsor-btn" onclick="showToast('Thank you! Our team will contact you shortly.')">Become a Sponsor</button>
+        </article>
+
+        <!-- Champion Tier (Featured) -->
+        <article class="tier-card featured reveal" role="listitem" tabindex="0" aria-label="Champion sponsor tier, 2000 dollars per month, most impact">
+          <div class="tier-name">Champion</div>
+          <div class="tier-amount">$2,000 <span>/month</span></div>
+          <p class="tier-desc">For organizations committed to disability inclusion at scale across the continent.</p>
+          <ul class="tier-perks" aria-label="Tier benefits">
+            <li class="tier-perk">Featured on homepage &amp; app</li>
+            <li class="tier-perk">Quarterly video impact stories</li>
+            <li class="tier-perk">Sponsor 30 members' equipment</li>
+            <li class="tier-perk">Fund a navigation mapping day</li>
+            <li class="tier-perk">Named expert scholarship program</li>
+          </ul>
+          <button class="sponsor-btn" onclick="showToast('Thank you! Our team will contact you shortly.')">Become a Champion</button>
+        </article>
+
+        <!-- Visionary Tier -->
+        <article class="tier-card reveal" role="listitem" tabindex="0" aria-label="Visionary sponsor tier, 10000 dollars per month">
+          <div class="tier-name">Visionary</div>
+          <div class="tier-amount">$10K <span>/month</span></div>
+          <p class="tier-desc">Transformational partnership for corporates and foundations driving systemic change.</p>
+          <ul class="tier-perks" aria-label="Tier benefits">
+            <li class="tier-perk">Branded navigation region</li>
+            <li class="tier-perk">Annual beneficiary summit access</li>
+            <li class="tier-perk">Dedicated CSR content series</li>
+            <li class="tier-perk">Co-design new platform features</li>
+            <li class="tier-perk">Full year impact documentary</li>
+          </ul>
+          <button class="sponsor-btn" onclick="showToast('Thank you! Our team will contact you shortly.')">Partner With Us</button>
+        </article>
+
+      </div>
+
+      <!-- Current Sponsors -->
+      <div style="margin-top:48px;">
+        <div class="section-label" style="margin-bottom:16px;">Current Partners</div>
+        <div class="sponsor-logos" aria-label="Current sponsor logos">
+          <div class="sponsor-logo">🌍 AfriCare Foundation</div>
+          <div class="sponsor-logo">💡 BrightSight NGO</div>
+          <div class="sponsor-logo">📱 AccessTech Ltd</div>
+          <div class="sponsor-logo">🏥 VisionHealth Africa</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SIGN UP SECTION ===== -->
+    <section class="signup-section" id="join" aria-labelledby="join-heading">
+      <div class="signup-inner">
+        <div class="section-label" style="text-align:center;">Get Started</div>
+        <h2 class="section-title" id="join-heading">Join A.G Echo Vision Today</h2>
+        <p style="color:var(--muted);margin-bottom:0;font-size:1rem;line-height:1.8;">
+          Free for all visually impaired members. Get navigation access, community connection,
+          and your personal toolkit from day one.
+        </p>
+        <div class="signup-form" role="form" aria-label="Join A.G Echo Vision">
+          <input type="email" placeholder="Your email address" aria-label="Email address" id="signup-email">
+          <button class="btn-primary" onclick="handleSignup()" aria-label="Join free">
+            Join Free →
+          </button>
+        </div>
+        <p style="margin-top:16px;font-size:0.78rem;color:var(--muted);">
+          No payment required. Works with all screen readers. Privacy respected.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer role="contentinfo">
+    <div class="footer-brand">
+      <a href="#" class="logo" aria-label="A.G Echo Vision home">
+        <div class="logo-icon" aria-hidden="true">👁</div>
+        A.G Echo Vision
+      </a>
+      <p>Navigate. Connect. Thrive. A global platform built with and for the visually impaired community across all continents.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Platform</h5>
+      <ul>
+        <li><a href="#navigate">Navigation</a></li>
+        <li><a href="#connect">Community</a></li>
+        <li><a href="#stories">Stories</a></li>
+        <li><a href="#marketplace">Tools</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Support</h5>
+      <ul>
+        <li><a href="#">Accessibility Help</a></li>
+        <li><a href="#">Audio Guide</a></li>
+        <li><a href="#">Braille Manual</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Organisation</h5>
+      <ul>
+        <li><a href="#sponsors">Sponsor Us</a></li>
+        <li><a href="#">Volunteer</a></li>
+        <li><a href="#">Press</a></li>
+        <li><a href="#">Privacy</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <div class="footer-bottom">
+    <span>© 2025 A.G Echo Vision. Built with love for every person navigating this world.</span>
+    <span>🌍 Africa · Asia · Americas · Europe · Oceania</span>
+  </div>
+
+  <!-- ========== FLOATING VOICE BUTTON ========== -->
+  <button class="voice-nav-btn" onclick="startVoiceGuide()" aria-label="Activate voice guidance - tap to start audio navigation">🎙️</button>
+  <div class="voice-tooltip" aria-hidden="true">🔊 Tap for Voice Guidance</div>
+
+  <!-- ========== JOIN MODAL ========== -->
+  <div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" onclick="closeModalOnBg(event)">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close join dialog">✕</button>
+      <h3 id="modal-title">Join A.G Echo Vision</h3>
+      <p>Create your free account and start your journey with our community today.</p>
+      <div class="modal-form" role="form" aria-label="Account creation form">
+        <input type="text" placeholder="Your full name" aria-label="Full name">
+        <input type="email" placeholder="Email address" aria-label="Email address">
+        <select aria-label="I am joining as">
+          <option value="" disabled selected>I am joining as…</option>
+          <option>A visually impaired person</option>
+          <option>A carer or family member</option>
+          <option>An expert or guide</option>
+          <option>A volunteer</option>
+          <option>A sponsor or organisation</option>
+        </select>
+        <select aria-label="Select your country">
+          <option value="" disabled selected>Select your country</option>
+          <option>Nigeria</option>
+          <option>Kenya</option>
+          <option>South Africa</option>
+          <option>Ghana</option>
+          <option>Ethiopia</option>
+          <option>Egypt</option>
+          <option>India</option>
+          <option>Other</option>
+        </select>
+        <button class="btn-primary" style="width:100%;justify-content:center;" onclick="handleJoin()" aria-label="Create free account">
+          Create Free Account →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== TOAST NOTIFICATION ========== -->
+  <div id="toast" role="alert" aria-live="assertive" style="
+    position:fixed; bottom:100px; left:50%; transform:translateX(-50%) translateY(30px);
+    background:var(--card); border:1px solid var(--gold); border-radius:12px;
+    padding:14px 24px; font-weight:600; font-size:0.9rem;
+    opacity:0; transition:all 0.4s; z-index:999; white-space:nowrap;
+    box-shadow:0 8px 30px rgba(0,0,0,0.4);
+  "></div>
+
+  <!-- JavaScript (loaded last for performance) -->
+  <script src="script.js"></script>
+
+</body>
+</html>
